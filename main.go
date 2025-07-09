@@ -4,5 +4,6 @@ func main() {
 	// variable()
 	// constant()
 	// control_flow()
-	function()
+	// function()
+	data_structure()
 }
