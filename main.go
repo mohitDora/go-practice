@@ -2,5 +2,6 @@ package main
 
 func main() {
 	// variable()
-	constant()
+	// constant()
+	control_flow()
 }
