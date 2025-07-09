@@ -6,5 +6,6 @@ func main() {
 	// control_flow()
 	// function()
 	// data_structure()
-	pointer()
+	// pointer()
+	error_handling()
 }
