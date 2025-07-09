@@ -5,5 +5,6 @@ func main() {
 	// constant()
 	// control_flow()
 	// function()
-	data_structure()
+	// data_structure()
+	pointer()
 }
