@@ -3,5 +3,6 @@ package main
 func main() {
 	// variable()
 	// constant()
-	control_flow()
+	// control_flow()
+	function()
 }
