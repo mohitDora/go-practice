@@ -10,5 +10,6 @@ func main() {
 	// error_handling()
 	// interface_()
 	// concurrency()
-	struct_()
+	// struct_()
+	json_()
 }
