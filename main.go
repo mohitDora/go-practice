@@ -7,5 +7,6 @@ func main() {
 	// function()
 	// data_structure()
 	// pointer()
-	error_handling()
+	// error_handling()
+	interface_()
 }
