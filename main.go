@@ -9,5 +9,6 @@ func main() {
 	// pointer()
 	// error_handling()
 	// interface_()
-	concurrency()
+	// concurrency()
+	struct_()
 }
