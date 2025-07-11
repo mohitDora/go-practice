@@ -14,5 +14,6 @@ func main() {
 	// json_()
 	// context_()
 	// http_()
-	mutex_()
+	// mutex_()
+	generics()
 }
