@@ -15,5 +15,6 @@ func main() {
 	// context_()
 	// http_()
 	// mutex_()
-	generics()
+	// generics()
+	rwMutex()
 }
