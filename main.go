@@ -16,5 +16,6 @@ func main() {
 	// http_()
 	// mutex_()
 	// generics()
-	rwMutex()
+	// rwMutex()
+	once_()
 }
