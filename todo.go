@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -51,7 +52,7 @@ func initDB() {
 	// Open PostgreSQL database connection
 	// Ensure this connection string is correct and accessible from Replit
 	// It's good practice to get this from an environment variable for security
-	db, err = sql.Open("postgres", "postgresql://AggDb_owner:npg_rnFhVj0JHs1Z@ep-plain-lab-a10rbl4g-pooler.ap-southeast-1.aws.neon.tech/AggDb?sslmode=require&channel_binding=require")
+	db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
