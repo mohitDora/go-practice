@@ -17,5 +17,6 @@ func main() {
 	// mutex_()
 	// generics()
 	// rwMutex()
-	once_()
+	// once_()
+	pool_()
 }
