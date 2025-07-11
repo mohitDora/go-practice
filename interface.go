@@ -50,7 +50,7 @@ func interface_() {
 		fmt.Println("r is unknown type")
 	}
 
-  // pointer vs value receiver
+	// pointer vs value receiver
 	person1 := Person{name: "John", age: 30}
 	person1.SetName("Harry")
 	fmt.Println(person1.name, person1.age)

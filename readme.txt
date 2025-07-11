@@ -73,3 +73,7 @@ my-go-project/
 │   └── templates/
 │       └── index.html
 └── README.md
+
+go fmt : Code formatting
+
+go vet : Catching Suspicious Code

@@ -18,5 +18,6 @@ func main() {
 	// generics()
 	// rwMutex()
 	// once_()
-	pool_()
+	// pool_()
+	package_()
 }
