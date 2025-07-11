@@ -77,3 +77,36 @@ my-go-project/
 go fmt : Code formatting
 
 go vet : Catching Suspicious Code
+
+go build : compile the package
+
+//cross compilation
+GOOS=linux GOARCH=amd64 go build -o my_api_linux ./cmd/api
+
+Here is a breakdown of their differences:
+
+1. Worker Pool
+Primary Goal: To control concurrency and limit resource usage.
+
+Structure: A fixed number of "worker" goroutines are created at the start. These workers wait for tasks to be sent to them via a shared jobs channel.
+
+Concurrency: The level of concurrency is fixed and determined by the number of workers. This prevents the system from being overwhelmed if a large number of tasks arrive at once.
+
+Best For: I/O-bound tasks or when you need to prevent resource exhaustion (e.g., from too many database connections, HTTP requests, or memory allocations). It is the ideal pattern for handling a massive, potentially unbounded number of jobs with a limited set of resources.
+
+Analogy: A factory with a fixed number of workers. Orders (jobs) arrive in a queue. The workers pick up the next available job, complete it, and then go back to the queue to get another one.
+
+2. Fan-In/Fan-Out
+Primary Goal: To parallelize a set of tasks and then aggregate their results.
+
+Structure:
+
+Fan-Out: A single "producer" goroutine distributes a stream of work items to a separate goroutine for each item. This creates a "fan" of concurrently executing goroutines. The number of goroutines is dynamic and scales with the number of tasks.
+
+Fan-In: A single "collector" goroutine aggregates the results from multiple results channels (one from each of the fan-out goroutines) into a single unified results channel. This consolidates the "fan" back into a single stream.
+
+Concurrency: The level of concurrency is dynamic and corresponds to the number of tasks. For N tasks, you might launch N goroutines.
+
+Best For: CPU-bound tasks where you want to fully utilize all available cores. It is effective when the number of tasks is known and not excessively large, and the work can be easily divided.
+
+Analogy: A main office (producer) sends out individual packages (jobs) to a large number of delivery drivers (goroutines). Once the drivers deliver their packages, they all report their completion status to a single manager (fan-in) who logs all the results.

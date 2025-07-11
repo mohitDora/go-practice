@@ -19,5 +19,8 @@ func main() {
 	// rwMutex()
 	// once_()
 	// pool_()
-	package_()
+	// package_()
+	// workerPool()
+	// fan_in_out()
+	pipeline()
 }
