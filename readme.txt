@@ -40,3 +40,36 @@ sync: Advanced synchronization primitives (Mutexes, WaitGroups - useful when cha
 context: For managing deadlines, cancellations, and request-scoped values across API boundaries and goroutines.
 
 testing: The built-in testing framework.
+
+project layout and architecture
+cmd directory hold the source code for the main app. 
+usage : cmd/<app-name>/main.go
+
+internal directory : contains private application code that you want other projects to import
+
+pkg : reusable, public libraries that external projects can import
+
+api : contains API specifications
+web : client side code
+scripts : automation scripts
+build : Dockerfile and K8s configs 
+configs : configuration file
+test : test files
+
+my-go-project/
+├── go.mod
+├── go.sum
+├── cmd/
+│   └── server/
+│       └── main.go
+├── internal/
+│   ├── api/
+│   │   └── handlers.go
+│   └── database/
+│       └── db.go
+├── web/
+│   ├── static/
+│   │   └── style.css
+│   └── templates/
+│       └── index.html
+└── README.md
