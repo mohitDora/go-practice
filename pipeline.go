@@ -18,6 +18,7 @@ func pipeline() {
 	*/
 	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	done := make(chan struct{})
+	defer close(done)
 
 	in := gen(done, nums...)
 	out := square(done, in)
